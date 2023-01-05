@@ -1,0 +1,10 @@
+RewriteEngine On
+Options +FollowSymLinks
+Options -Indexes
+RewriteCond %{SCRIPT_FILENAME} !-d  
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule . index.php [L,QSA]
+RewriteCond %{HTTP_HOST} ^cybersmm\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.cybersmm\.com$
+RewriteRule ^/?$ "https\:\/\/cybersmm\.com\/welcome" [R=301,L]
+
